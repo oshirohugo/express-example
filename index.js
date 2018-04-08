@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/weather', weatherRouter);
 
 
-app.listen(LISTEN_PORT, () => {
+const server = app.listen(LISTEN_PORT, () => {
   logger.info(`Server started on port ${LISTEN_PORT}`);
 });
+
+module.exports = server;

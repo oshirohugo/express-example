@@ -1,16 +1,23 @@
 const winston = require('winston');
+const config = require('config');
 
-const tsFormat = () => (new Date()).toLocaleTimeString();
+const transports = [];
 
-const logger = new (winston.Logger)({
-  transports: [
-    // colorize the output to the console
-    new (winston.transports.Console)({
-      timestamp: tsFormat,
+if (!process.env.NODE_ENV) {
+  if (!process.env.MOCHA_TEST) {
+    // Console Transport only for local development and not for Mocha tests
+    const timestampFormat = () => new Date().toISOString();
+
+    transports.push(new (winston.transports.Console)({
       colorize: true,
-      level: 'debug',
-    }),
-  ],
+      timestamp: timestampFormat,
+      level: config.get('logger.level'),
+    }));
+  }
+}
+
+const logger = new winston.Logger({
+  transports,
 });
 
 module.exports = logger;
