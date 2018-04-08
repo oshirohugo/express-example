@@ -8,5 +8,8 @@
   "geonames": {
     "host": "api.geonames.org",
     "username": "hoshiro"
+  },
+  "logger": {
+    "level": "debug"
   }
 }
