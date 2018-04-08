@@ -1,0 +1,12 @@
+{
+  "port": "9001",
+  "open-weather": {
+    "host": "api.openweathermap.org",
+    "api-key": "a8c050db9ac2f027b2f1779c96f90c15",
+    "unit-system": "metric"
+  },
+  "geonames": {
+    "host": "api.geonames.org",
+    "username": "hoshiro"
+  }
+}
