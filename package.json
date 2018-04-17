@@ -4,9 +4,7 @@
   "description": "Express example structure",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm run docs",
     "start": "node index.js",
-    "pretest": "npm run docs",
     "test": "MOCHA_TEST=True mocha --exit --timeout 10000",
     "docs": "yaml2json ./docs --save"
   },
